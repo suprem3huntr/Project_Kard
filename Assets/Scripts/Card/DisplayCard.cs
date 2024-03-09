@@ -34,19 +34,7 @@ public class DisplayCard : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         displayID = gameManager.cardCreated;
         card = gameManager.cardDatabase.GetCard(displayID);
-        id = card.id;
-        cardName = card.cardName;
-        cost = card.cost;
-        atk = card.atk;
-        def = card.def;
-        description = card.description;
-        sprite = card.sprite;
-        nameText.text = cardName;
-        costText.text = ""+cost;
-        atkText.text = ""+atk;
-        defText.text = ""+def;
-        descriptionText.text = description;
-        spriteImage.sprite = sprite;
+        
 
        
         

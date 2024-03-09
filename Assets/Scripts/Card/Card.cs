@@ -10,8 +10,9 @@ public class Card : ScriptableObject
     public int cost;
     public int atk;
     public int def;
+    public string characterDescription;
     public string description;
-    public Sprite sprite;
+    public Sprite cardImage;
     public bool Ability;
     public CostType[] costTypes;
     public int[] costCounts;
@@ -20,6 +21,7 @@ public class Card : ScriptableObject
     public TargetType[] targetTypes;
     public TriggerType[] triggerTypes;
     public SummonLocation summonLocation;
-    public int summonCost; 
+    public int summonCost;
+    public string toolTip;
 
 }
