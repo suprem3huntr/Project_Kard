@@ -31,6 +31,7 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
         if(gameManager.currState.currState == States.PlayState && row<3){
             if(!gameManager.currState.isCondition()){
                 gameManager.currState.doAction();
+                gameManager.selectedCard = this;
             }
         }
     }

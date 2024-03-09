@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     List<GameObject> allUIs = new List<GameObject>();
 
     public int cardCreated;
+    public CardInstance selectedCard;
     
 
     [SerializeField] private Button startButton;
