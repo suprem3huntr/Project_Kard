@@ -4,14 +4,14 @@ using UnityEngine;
 
 public abstract class State 
 {
-    State nextState;
+    protected State nextState;
     public States currState;
 
     public virtual bool isCondition(){
         return true;
     }
     public virtual void doAction(){
-        return null;
+        return;
     }
     public virtual State NextState(){
         return nextState;
