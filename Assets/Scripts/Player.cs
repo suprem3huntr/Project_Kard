@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : NetworkBehaviour
 {
-    
+    public NetworkVariable<int> mana = new NetworkVariable<int>(0);
     public NetworkList<int> deck;
     public NetworkList<int> hand;
     public NetworkList<int> backrow;
@@ -75,8 +75,7 @@ public class Player : NetworkBehaviour
         allRows.Add(otherPlayer.backrow);
         for(int i=0;i<5;i++)
         {
-            addtoRow(deck[0],0);
-            deck.RemoveAt(0);
+            DrawCard(false);
         }
         if(starter == OwnerClientId)
         {
@@ -112,6 +111,8 @@ public class Player : NetworkBehaviour
                 addToRowServerRpc(row,i);
                 break;
         }
+
+
         
     }
     public void move(int from,int to,int indexFrom)
@@ -166,6 +167,20 @@ public class Player : NetworkBehaviour
         gameManager.moveUI(from,to,indexFrom);
         moveUIServerRpc((from+3)%6,(to+3)%6,indexFrom);
         
+        
+    }
+
+    public void DrawCard(bool isMana)
+    {
+        if(isMana)
+        {
+            mana.Value++;
+        }
+        else
+        {
+            addtoRow(deck[0],0);
+            deck.RemoveAt(0); 
+        }
         
     }
 
