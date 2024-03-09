@@ -13,6 +13,7 @@ public class Card : ScriptableObject
     public string characterDescription;
     public string description;
     public Sprite cardImage;
+    public Sprite cardNameplate;
     public bool Ability;
     public CostType[] costTypes;
     public int[] costCounts;
