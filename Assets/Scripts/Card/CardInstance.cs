@@ -13,15 +13,7 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameObject parent = gameObject.transform.parent.gameObject;
-        if(gameManager.state == States.PlayerTurn)
-        {
-            if(parent.name == "PlayerHand")
-            {
-                gameManager.state = States.PlayerSelectMove;
-                gameManager.cardsInPlay.Add(gameObject);
-            }
-        }
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -81,7 +81,7 @@ public class Player : NetworkBehaviour
         if(starter == OwnerClientId)
         {
             gameManager.turn = true;
-            gameManager.state = States.PlayerTurn;
+
             Debug.Log("Starter");
         }
         

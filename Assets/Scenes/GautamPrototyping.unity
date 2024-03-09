@@ -1145,6 +1145,7 @@ GameObject:
   - component: {fileID: 2117218109}
   - component: {fileID: 2117218108}
   - component: {fileID: 2117218107}
+  - component: {fileID: 2117218110}
   m_Layer: 5
   m_Name: PlayerHand
   m_TagString: handUI
@@ -1247,3 +1248,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117218104}
   m_CullTransparentMesh: 1
+--- !u!114 &2117218110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117218104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b6c3ac48502cc4a9139c830a382d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

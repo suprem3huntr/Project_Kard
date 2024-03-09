@@ -17,11 +17,7 @@ public class Rows : MonoBehaviour,IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(gameManager.state == States.PlayerSelectMove)
-        {
-            gameManager.player.move(gameManager.cardsInPlay.Last().GetComponent<CardInstance>().row,rowNumber,gameManager.cardsInPlay.Last().transform.GetSiblingIndex());
-            gameManager.player.EndTurn();
-        }
+
     }
 
     

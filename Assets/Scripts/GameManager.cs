@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 {
     public CardDatabase cardDatabase;
     public bool turn = false;
-    public States state = States.Wait;
+
     public Player player;
 
     [SerializeField]
@@ -68,12 +68,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("hm");
         if (turn)
         {
-            state = States.Wait;
+
             turn = false;
         }
         else
         {
-            state = States.PlayerTurn;
+
             turn = true;
         }
     }
