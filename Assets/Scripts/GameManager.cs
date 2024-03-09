@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     List<GameObject> allUIs = new List<GameObject>();
 
     public int cardCreated;
+    public State currState;
     public List<GameObject> cardsInPlay = new List<GameObject>();
 
     [SerializeField] private Button startButton;

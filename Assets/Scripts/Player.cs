@@ -83,6 +83,11 @@ public class Player : NetworkBehaviour
             gameManager.turn = true;
 
             Debug.Log("Starter");
+
+            gameManager.currState = new DrawState(new PlayState(), 2);
+        }
+        else{
+            gameManager.currState = new IdleState();
         }
         
     }

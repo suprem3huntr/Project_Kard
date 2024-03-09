@@ -45,4 +45,11 @@ public enum SummonLocation
     OpponentDeck,
 }
 
-
+public enum States{
+    IdleState,
+    TargetState,
+    AttackState,
+    DrawState,
+    PlayState,
+    GuardState,
+}
