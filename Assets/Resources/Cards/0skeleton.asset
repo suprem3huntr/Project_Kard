@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 0skeleton
   m_EditorClassIdentifier: 
   id: -1
-  cardName: 
-  cost: 0
+  cardName: Larry
+  cost: 1
   atk: 0
   def: 0
+  characterDescription: Just a skeleton.
   description: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 0359fdb7b42070343986010ddcc4130a, type: 3}
+  cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 
   costCounts: 

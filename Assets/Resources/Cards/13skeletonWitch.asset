@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 13skeletonWitch
   m_EditorClassIdentifier: 
   id: -1
-  cardName: 
-  cost: 0
+  cardName: Bethsheba
+  cost: 6
   atk: 0
   def: 0
+  characterDescription: DO NOT let her cook.
   description: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: bba7f2e34a2fc1541aa75ec84fbeed7c, type: 3}
+  cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 
   costCounts: 

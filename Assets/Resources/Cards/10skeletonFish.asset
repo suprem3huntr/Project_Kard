@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 10skeletonFish
   m_EditorClassIdentifier: 
   id: -1
-  cardName: 
-  cost: 0
+  cardName: Jaws
+  cost: 4
   atk: 0
   def: 0
+  characterDescription: gulugulugulugulu
   description: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: db1c7205142dfef40ab39c908c474111, type: 3}
+  cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 
   costCounts: 
