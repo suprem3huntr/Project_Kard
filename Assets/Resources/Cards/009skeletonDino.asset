@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cef05e3456be91845a021a89d17eb519, type: 3}
-  m_Name: 7skeletonHacker
+  m_Name: 009skeletonDino
   m_EditorClassIdentifier: 
   id: -1
-  cardName: Harry
-  cost: 3
+  cardName: 
+  cost: 4
   atk: 0
   def: 0
-  characterDescription: Harry is a part of GDSC.
-  description: Decreases the opponent's mana by two. one time use.
-  cardImage: {fileID: 21300000, guid: 3371082f87ba41645a3ca9b0c2ddbe5d, type: 3}
+  characterDescription: 
+  description: 
+  cardImage: {fileID: 21300000, guid: 04c45f58a125be74587dc113c3fa0c29, type: 3}
   cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 

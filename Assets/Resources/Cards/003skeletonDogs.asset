@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cef05e3456be91845a021a89d17eb519, type: 3}
-  m_Name: 12skeletonJoker
+  m_Name: 003skeletonDogs
   m_EditorClassIdentifier: 
   id: -1
-  cardName: Arthur
-  cost: 5
+  cardName: Dry Bones
+  cost: 2
   atk: 0
   def: 0
-  characterDescription: boom boom boom boom
+  characterDescription: woof?
   description: 
-  cardImage: {fileID: 21300000, guid: 29c8241105af1074c9f8f5f01076c7c5, type: 3}
+  cardImage: {fileID: 21300000, guid: 7496b6a759ce07d419d4f1d2c432242e, type: 3}
   cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 

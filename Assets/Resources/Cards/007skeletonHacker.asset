@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cef05e3456be91845a021a89d17eb519, type: 3}
-  m_Name: 8shovel
+  m_Name: 007skeletonHacker
   m_EditorClassIdentifier: 
   id: -1
-  cardName: Shovel
+  cardName: Harry
   cost: 3
   atk: 0
   def: 0
-  characterDescription: Mending, Efficiency V, Unbreaking III
-  description: Spawns a Larry.
-  cardImage: {fileID: 21300000, guid: 14e1a8e7a004b494799f24549f0d7068, type: 3}
+  characterDescription: Harry is a part of GDSC.
+  description: Decreases the opponent's mana by two. one time use.
+  cardImage: {fileID: 21300000, guid: 3371082f87ba41645a3ca9b0c2ddbe5d, type: 3}
   cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 

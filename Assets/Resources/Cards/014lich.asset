@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cef05e3456be91845a021a89d17eb519, type: 3}
-  m_Name: 5cannon
+  m_Name: 014lich
   m_EditorClassIdentifier: 
   id: -1
-  cardName: Maverick
-  cost: 2
+  cardName: Lichard
+  cost: 6
   atk: 0
   def: 0
-  characterDescription: Woooooo!!!!
-  description: Has the ability to directly attack a support card.
-  cardImage: {fileID: 21300000, guid: 2dd12290e53e8f14b842439bc2a01ead, type: 3}
+  characterDescription: Lichie for short. Lord of all skeletons.
+  description: 
+  cardImage: {fileID: 21300000, guid: b83c88335e17ba6419dbc33afe1f4bff, type: 3}
   cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 
