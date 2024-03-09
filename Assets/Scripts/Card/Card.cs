@@ -12,5 +12,14 @@ public class Card : ScriptableObject
     public int def;
     public string description;
     public Sprite sprite;
+    public bool Ability;
+    public CostType[] costTypes;
+    public int[] costCounts;
+    public EffectType[] effectTypes;
+    public int[] effectValues;
+    public TargetType[] targetTypes;
+    public TriggerType[] triggerTypes;
+    public SummonLocation summonLocation;
+    public int summonCost; 
 
 }
