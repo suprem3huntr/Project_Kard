@@ -17,7 +17,7 @@ public class Rows : MonoBehaviour,IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-
+        
     }
 
     

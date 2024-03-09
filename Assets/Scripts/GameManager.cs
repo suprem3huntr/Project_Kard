@@ -16,6 +16,18 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
+    public IdleState idleState = new IdleState();
+    public DrawState drawState = new DrawState();
+    
+    public AttackState attackState = new AttackState();
+    
+    public TargetState targetState = new TargetState();
+    
+    public GuardState guardState = new GuardState();
+    
+    public PlayState playState = new PlayState();
+    public State currState;
+
     [SerializeField]
     private GameObject handUI;
     [SerializeField]
@@ -34,12 +46,10 @@ public class GameManager : MonoBehaviour
     List<GameObject> allUIs = new List<GameObject>();
 
     public int cardCreated;
-    public State currState;
     public List<GameObject> cardsInPlay = new List<GameObject>();
 
     [SerializeField] private Button startButton;
 
-    // Start is called before the first frame update
     void Awake()
     {
          
@@ -60,6 +70,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         cardDatabase = Resources.Load<CardDatabase>("Card_Database");
+        currState = idleState;
         
     }
 

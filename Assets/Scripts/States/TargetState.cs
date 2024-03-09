@@ -1,8 +1,7 @@
 public class TargetState : State{
     private int targets;
-    public TargetState(State s, int t){
+    public TargetState(){
         currState = States.TargetState;
-        targets = t;
     }
 
     public override void doAction(){
@@ -13,4 +12,7 @@ public class TargetState : State{
         return targets==0;
     }
 
+    public override void ResetVariable(int t){
+        targets = t;
+    }
 }

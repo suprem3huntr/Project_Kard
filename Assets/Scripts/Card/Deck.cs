@@ -27,7 +27,7 @@ public class Deck : MonoBehaviour,IPointerClickHandler
             gameManager.currState.doAction();
             gameManager.player.DrawCard(isMana);
             if(gameManager.currState.isCondition()){
-                gameManager.currState.NextState();
+                gameManager.currState = gameManager.currState.NextState();
             }
         }
     }

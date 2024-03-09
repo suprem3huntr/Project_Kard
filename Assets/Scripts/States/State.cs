@@ -16,4 +16,10 @@ public abstract class State
     public virtual State NextState(){
         return nextState;
     }
+    public virtual void ResetVariable(int a){
+        return;
+    }
+    public virtual void SetNextState(State s){
+        nextState = s;
+    }
 }

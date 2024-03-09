@@ -1594,6 +1594,7 @@ GameObject:
   - component: {fileID: 1365708780}
   - component: {fileID: 1365708779}
   - component: {fileID: 1365708778}
+  - component: {fileID: 1365708781}
   m_Layer: 5
   m_Name: ManaDeck
   m_TagString: Untagged
@@ -1688,6 +1689,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365708776}
   m_CullTransparentMesh: 1
+--- !u!114 &1365708781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365708776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7d0c8ebf16dde44bd3f43bc099a81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMana: 1
 --- !u!1 &1404080528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,6 +2524,7 @@ GameObject:
   - component: {fileID: 2140836920}
   - component: {fileID: 2140836919}
   - component: {fileID: 2140836921}
+  - component: {fileID: 2140836922}
   m_Layer: 5
   m_Name: CharDeck
   m_TagString: Untagged
@@ -2604,3 +2619,16 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &2140836922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140836917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7d0c8ebf16dde44bd3f43bc099a81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMana: 0

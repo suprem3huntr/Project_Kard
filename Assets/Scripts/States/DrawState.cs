@@ -1,9 +1,7 @@
 public class DrawState : State{
     private int draws;
-    public DrawState(State s, int d){
+    public DrawState(){
         currState = States.DrawState;
-        nextState = s;
-        draws = d;
     }
 
     public override void doAction(){
@@ -14,4 +12,7 @@ public class DrawState : State{
         return draws==0;
     }
 
+    public override void ResetVariable(int d){
+        draws = d;
+    }
 }
