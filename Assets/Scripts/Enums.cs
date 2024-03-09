@@ -9,6 +9,7 @@ public enum CostType
     Troop,
     Hand,
     Graveyard,
+    Damage,
 }
 public enum EffectType
 {
@@ -18,12 +19,18 @@ public enum EffectType
     AtkBoost,
     Heal,
     Damage,
+    TwinStrike,
+    Destroy
+
 }
 public enum TargetType
 {
     Player,
     Troop,
     Row,
+    Position,
+    All,
+    
 }
 public enum TriggerType
 {
@@ -32,6 +39,14 @@ public enum TriggerType
     OnHit,
     OnDeath,
     OnTrigger,
+    Condition,
+    onMove
+}
+
+public enum ConditionType
+{
+    Troop,
+    Mana,
 }
 
 public enum SummonLocation
