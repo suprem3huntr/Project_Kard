@@ -8,49 +8,34 @@ using UnityEngine.UIElements;
 
 public class DisplayCard : MonoBehaviour
 {
-    public int displayID;
     
-    private Card card;
-    public int id;
-    public string cardName;
-    public int cost;
-    public int atk;
-    public int def;
-    public string description;
-    public Sprite sprite;
 
-    public TMP_Text nameText;
-    public TMP_Text costText;
-    public TMP_Text atkText;
-    public TMP_Text defText;
-    public TMP_Text descriptionText;
+    [SerializeField]
+    TMP_Text nameText;
+    [SerializeField]
+    TMP_Text atkText;
+    [SerializeField]
+    TMP_Text defText;
+    
     public UnityEngine.UI.Image spriteImage;
 
     private GameManager gameManager;
 
+    private CardInstance instance;
     // Start is called before the first frame update
     void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        displayID = gameManager.cardCreated;
-        card = gameManager.cardDatabase.GetCard(displayID);
-        id = card.id;
-        cardName = card.cardName;
-        cost = card.cost;
-        atk = card.atk;
-        def = card.def;
-        description = card.description;
-        sprite = card.sprite;
-        nameText.text = cardName;
-        costText.text = ""+cost;
-        atkText.text = ""+atk;
-        defText.text = ""+def;
-        descriptionText.text = description;
-        spriteImage.sprite = sprite;
-
-       
+        instance = gameObject.GetComponent<CardInstance>();
+    }
+    void Start()
+    {
+        nameText.text = instance.cardName;
+        atkText.text = ""+instance.atk;
+        defText.text = ""+instance.def;
         
     }
+    
 
     
 }

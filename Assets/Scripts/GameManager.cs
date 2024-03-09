@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     List<GameObject> allUIs = new List<GameObject>();
 
     public int cardCreated;
-    public List<GameObject> cardsInPlay = new List<GameObject>();
+    
 
     [SerializeField] private Button startButton;
 
@@ -94,9 +94,9 @@ public class GameManager : MonoBehaviour
     {
         
         cardCreated = card;
-        cardsInPlay.Add(Instantiate(cardPrefab,allUIs[UI].transform));
-        cardsInPlay.Last().GetComponent<CardInstance>().row = UI;
-        removeLastCardinPlay();
+        Instantiate(cardPrefab,allUIs[UI].transform).GetComponent<CardInstance>().row = UI;
+        
+        
     }
     
     public void moveUI(int from,int to,int indexFrom)
@@ -109,10 +109,7 @@ public class GameManager : MonoBehaviour
         card.GetComponent<CardInstance>().row = to;
     }
     
-    public void removeLastCardinPlay()
-    {
-        cardsInPlay.RemoveAt(cardsInPlay.Count-1);
-    }
+    
     
     public void loadScene(int i)
     {
