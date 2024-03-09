@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cef05e3456be91845a021a89d17eb519, type: 3}
-  m_Name: 14lich
+  m_Name: 012skeletonJoker
   m_EditorClassIdentifier: 
   id: -1
-  cardName: Lichard
-  cost: 6
+  cardName: Arthur
+  cost: 5
   atk: 0
   def: 0
-  characterDescription: Lichie for short. Lord of all skeletons.
+  characterDescription: boom boom boom boom
   description: 
-  cardImage: {fileID: 21300000, guid: b83c88335e17ba6419dbc33afe1f4bff, type: 3}
+  cardImage: {fileID: 21300000, guid: 29c8241105af1074c9f8f5f01076c7c5, type: 3}
   cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 

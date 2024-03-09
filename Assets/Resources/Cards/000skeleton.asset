@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cef05e3456be91845a021a89d17eb519, type: 3}
-  m_Name: 10skeletonFish
+  m_Name: 000skeleton
   m_EditorClassIdentifier: 
   id: -1
-  cardName: Jaws
-  cost: 4
+  cardName: Larry
+  cost: 1
   atk: 0
   def: 0
-  characterDescription: gulugulugulugulu
+  characterDescription: Just a skeleton.
   description: 
-  cardImage: {fileID: 21300000, guid: db1c7205142dfef40ab39c908c474111, type: 3}
+  cardImage: {fileID: 21300000, guid: 0359fdb7b42070343986010ddcc4130a, type: 3}
   cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
   Ability: 0
   costTypes: 
