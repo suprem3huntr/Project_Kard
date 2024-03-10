@@ -18,6 +18,7 @@ public class DisplayCard : MonoBehaviour
     TMP_Text defText;
     
     public UnityEngine.UI.Image spriteImage;
+    public UnityEngine.UI.Image namePlateImage;
 
     private GameManager gameManager;
 
@@ -33,9 +34,19 @@ public class DisplayCard : MonoBehaviour
         nameText.text = instance.cardName;
         atkText.text = ""+instance.atk;
         defText.text = ""+instance.def;
-        
+        spriteImage.sprite = instance.image;
+        namePlateImage.sprite = instance.namePlate;    
     }
-    
+
+    void Update()
+    {
+        nameText.text = instance.cardName;
+        atkText.text = ""+instance.atk;
+        defText.text = ""+instance.def;
+        spriteImage.sprite = instance.image;
+        namePlateImage.sprite = instance.namePlate;
+
+    }    
 
     
 }
