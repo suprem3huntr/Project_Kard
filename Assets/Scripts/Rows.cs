@@ -18,7 +18,13 @@ public class Rows : MonoBehaviour,IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if(gameManager.currState.currState == States.PlayState && gameManager.currState.isCondition() && rowNumber<3){
-            if(gameManager.selectedCard.row == rowNumber){
+            if(gameManager.selectedCard.row == 0){
+                if(gameManager.selectedCard.card.cost <= gameManager.player.mana.Value){
+                    gameManager.player.mana.Value = gameManager.player.mana.Value - gameManager.selectedCard.card.cost;
+                    gameManager.player.move(gameManager.selectedCard.row, rowNumber, gameManager.selectedCard.gameObject.transform.GetSiblingIndex());
+                }
+            }
+            else if(gameManager.selectedCard.row == rowNumber){
                 gameManager.currState.doAction();
             }
             else if(gameObject.transform.childCount < 3*rowNumber && rowNumber>0){

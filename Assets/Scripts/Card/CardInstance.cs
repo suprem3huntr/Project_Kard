@@ -32,17 +32,16 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        if(gameManager.currState.currState == States.PlayState && gameManager.currState.isCondition()){
+            gameManager.selectedCard = this;
+        }
         if(gameManager.currState.currState == States.PlayState && row<3){
-            // if(row==0 && !gameManager.currState.isCondition()){
-            //     continue;
-            // }
-            // else 
             if(!gameManager.currState.isCondition()){
                 gameManager.currState.doAction();
                 gameManager.selectedCard = this;
             }
         }
-        if(gameManager.currState.currState == States.AttackState && gameManager.attackTargets.Keys.ToList().Contains(this) && row == 1){
+        if(gameManager.currState.currState == States.AttackState && /*!gameManager.attackTargets.Keys.ToList().Contains(this) &&*/ row == 1){
             gameManager.currState = gameManager.attackTargetState;
             gameManager.selectedCard = this;
         }

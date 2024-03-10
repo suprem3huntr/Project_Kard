@@ -3,7 +3,14 @@ guid: 98895bb3e0a229c4194b0a7073f4b78b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - nameText: {instanceID: 0}
+  - atkText: {instanceID: 0}
+  - defText: {instanceID: 0}
+  - manaPrefab: {fileID: 7102120332098603511, guid: 78abb6ab1f300b743aad9ec556e2360e, type: 3}
+  - costPanel: {instanceID: 0}
+  - spriteImage: {instanceID: 0}
+  - namePlateImage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

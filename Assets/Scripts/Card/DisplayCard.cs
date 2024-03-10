@@ -8,15 +8,17 @@ using UnityEngine.UIElements;
 
 public class DisplayCard : MonoBehaviour
 {
-    
-
     [SerializeField]
     TMP_Text nameText;
+
     [SerializeField]
     TMP_Text atkText;
+
     [SerializeField]
     TMP_Text defText;
-    
+
+    public GameObject manaPrefab;
+    public Transform costPanel;
     public UnityEngine.UI.Image spriteImage;
     public UnityEngine.UI.Image namePlateImage;
 
@@ -35,7 +37,10 @@ public class DisplayCard : MonoBehaviour
         atkText.text = ""+instance.atk;
         defText.text = ""+instance.def;
         spriteImage.sprite = instance.image;
-        namePlateImage.sprite = instance.namePlate;    
+        namePlateImage.sprite = instance.namePlate;
+        for(int i=0; i<instance.cost; i++){
+            Instantiate(manaPrefab,costPanel);
+        }
     }
 
     void Update()
