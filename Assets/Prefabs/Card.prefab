@@ -207,20 +207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98895bb3e0a229c4194b0a7073f4b78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayID: -1
-  id: 0
-  cardName: 
-  cost: 0
-  atk: 0
-  def: 0
-  description: 
-  sprite: {fileID: 0}
-  nameText: {fileID: 0}
-  costText: {fileID: 0}
-  atkText: {fileID: 0}
-  defText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  spriteImage: {fileID: 0}
+  nameText: {fileID: 2515534604110352329}
+  atkText: {fileID: 4809285299889482538}
+  defText: {fileID: 5959623471664587807}
+  spriteImage: {fileID: 716408065166385479}
+  namePlateImage: {fileID: 2701546376432640144}
 --- !u!114 &3567795572053941424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +225,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
+  card: {fileID: 0}
+  atk: 0
+  def: 0
+  image: {fileID: 0}
+  namePlate: {fileID: 0}
+  cardName: 
+  cost: 0
 --- !u!1 &7234529489089988011
 GameObject:
   m_ObjectHideFlags: 0
