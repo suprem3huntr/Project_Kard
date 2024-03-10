@@ -4,6 +4,7 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class Player : NetworkBehaviour
 {
@@ -185,6 +186,23 @@ public class Player : NetworkBehaviour
         }
         
     }
+    public void CommitAttack()
+    {
+        List<int> indexes = new List<int>();
+        List<int> targetindexes = new List<int>();
+        List<int> targetRows = new List<int>();
+        foreach(CardInstance key in gameManager.attackTargets.Keys){
+            indexes.Add(key.gameObject.transform.GetSiblingIndex());
+            List<int> temp = new List<int>();
+            targetRows.Add((gameManager.attackTargets[key].row+3)%6);
+            targetindexes.Add(gameManager.attackTargets[key].gameObject.transform.GetSiblingIndex());
+            ;
+            key.Attack(gameManager.attackTargets[key]);
+        }
+        gameManager.attackTargets.Clear();
+    
+        attackServerRpc(indexes.ToArray(),targetRows.ToArray(),targetindexes.ToArray());
+    }
 
     public void NetworkSceneLoad(string s)
     {
@@ -324,6 +342,35 @@ public class Player : NetworkBehaviour
     private void endTurnClientRpc(ClientRpcParams clientRpcParams = default)
     {
         otherPlayer.gameManager.EndTurn();
+    }
+
+    [ServerRpc]
+    private void attackServerRpc(int[] indexes,int[] targetRows,int[] targetindexes,ServerRpcParams serverRpcParams = default)
+    {
+         ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[]{1-serverRpcParams.Receive.SenderClientId}
+                
+            }
+        };
+        attackClientRpc(indexes,targetRows,targetindexes,clientRpcParams);
+    }
+
+    [ClientRpc]
+    private void attackClientRpc(int[] indexes,int[] targetRows,int[] targetindexes,ClientRpcParams clientRpcParams = default)
+    {
+        Dictionary<CardInstance,CardInstance> attackdict = new Dictionary<CardInstance,CardInstance>();
+        
+        for(int i=0;i<indexes.Length;i++){
+            Debug.Log(targetindexes[i]);
+        
+        
+            CardInstance attacker = gameManager.allUIs[4].transform.GetChild(indexes[i]).GetComponent<CardInstance>();
+            CardInstance target = gameManager.allUIs[targetRows[i]].transform.GetChild(targetindexes[i]).GetComponent<CardInstance>();
+            attacker.Attack(target);
+        }
     }
     
     

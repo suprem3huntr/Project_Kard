@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject cardPrefab;
 
-    List<GameObject> allUIs = new List<GameObject>();
+    public List<GameObject> allUIs = new List<GameObject>();
 
     public int cardCreated;
     public CardInstance selectedCard;
@@ -83,16 +83,20 @@ public class GameManager : MonoBehaviour
     
     public void EndTurn()
     {
-        Debug.Log("hm");
+
         if (turn)
         {
 
             turn = false;
+            currState = idleState;
         }
         else
         {
 
             turn = true;
+            currState = drawState;
+            currState.ResetVariable(2);
+            currState.SetNextState(playState);
         }
     }
 
