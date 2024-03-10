@@ -26,6 +26,10 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
         namePlate = card.cardNameplate;
         cost = card.cost;
     }
+
+    public void Attack(CardInstance target){
+        Debug.log("Card " + target.card.nameText + " is hit by " + card.nameText);
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if(gameManager.currState.currState == States.PlayState && row<3){

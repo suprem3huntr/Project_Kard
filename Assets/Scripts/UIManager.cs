@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
         }
         else if(gameManager.currState.currState == States.AttackState){
             gameManager.currState = gameManager.currState.NextState();
+            foreach(CardInstance key in gameManager.attackTargets.Keys){
+                key.Attack(gameManager.attackTargets[key]);
+            }
+            gameManager.attackTargets.Clear();
         }
     }
     void Start()
