@@ -34,6 +34,14 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
                 gameManager.selectedCard = this;
             }
         }
+        if(gameManager.currState.currState == States.AttackState && gameManager.attackTargets.Keys().Contains(this) && row == 1){
+            gameManager.currState = gameManager.attackTargetState;
+            gameManager.selectedCard = this;
+        }
+        if(gameManager.currState.currState == States.AttackTargetState && row>3){
+            gameManager.attackTargets[gameManager.selectedCard] = this;
+            gameManager.currState = gameManager.currState.NextState();
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

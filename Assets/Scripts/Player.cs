@@ -117,6 +117,9 @@ public class Player : NetworkBehaviour
     public void move(int from,int to,int indexFrom)
     {
         int card = -1;
+        if(from==to){
+            
+        }
         switch(from)
         {
             case 0:

@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public GuardState guardState = new GuardState();
     
     public PlayState playState = new PlayState();
+    public AttackTargetState attackTargetState = new AttackTargetState();
+    
     public State currState;
 
     [SerializeField]
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     public int cardCreated;
     public CardInstance selectedCard;
+    public Dictionary<CardInstance,CardInstance> attackTargets = new Dictionary<CardInstance, CardInstance>();
     
 
     [SerializeField] private Button startButton;
@@ -72,7 +75,9 @@ public class GameManager : MonoBehaviour
     {
         cardDatabase = Resources.Load<CardDatabase>("Card_Database");
         currState = idleState;
-        
+        playState.SetNextState(attackState);
+        attackState.SetNextState(idleState);
+        attackTargetState.SetNextState(attackState);   
     }
 
     

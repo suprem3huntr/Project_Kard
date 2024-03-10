@@ -67,4 +67,5 @@ public enum States{
     DrawState,
     PlayState,
     GuardState,
+    AttackTargetState,
 }
