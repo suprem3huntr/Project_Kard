@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler
 {
@@ -28,7 +29,7 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     }
 
     public void Attack(CardInstance target){
-        Debug.log("Card " + target.card.nameText + " is hit by " + card.nameText);
+        Debug.Log("Card " + target.card.cardName + " is hit by " + card.cardName);
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -38,7 +39,7 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
                 gameManager.selectedCard = this;
             }
         }
-        if(gameManager.currState.currState == States.AttackState && gameManager.attackTargets.Keys().Contains(this) && row == 1){
+        if(gameManager.currState.currState == States.AttackState && !gameManager.attackTargets.Keys.ToList().Contains(this) && row == 1){
             gameManager.currState = gameManager.attackTargetState;
             gameManager.selectedCard = this;
         }

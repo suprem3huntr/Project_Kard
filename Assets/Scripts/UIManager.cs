@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private Button endPhaseButton;
+    [SerializeField]
+    private TMP_Text currentState;
     private GameManager gameManager;
     void Awake(){
         endPhaseButton.onClick.AddListener(EndPhase);
@@ -31,6 +34,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        
+        currentState.text = gameManager.currState.currState.ToString();
     }
 }

@@ -1,7 +1,7 @@
 public class AttackTargetState : State{
     private int targets;
     public AttackTargetState(){
-        currState = States.TargetState;
+        currState = States.AttackTargetState;
     }
 
     public override void doAction(){
