@@ -23,7 +23,7 @@ public class Deck : MonoBehaviour,IPointerClickHandler
     {
 
         if(gameManager.currState.currState == States.DrawState){
-            Debug.Log("Fuck");
+            
             gameManager.currState.doAction();
             gameManager.player.DrawCard(isMana);
             if(gameManager.currState.isCondition()){

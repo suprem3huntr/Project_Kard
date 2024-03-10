@@ -18,10 +18,23 @@ public class UIManager : MonoBehaviour
     void EndPhase(){
         if(gameManager.currState.currState == States.PlayState){
             gameManager.currState = gameManager.currState.NextState();
+            if(gameManager.currState.isCondition())
+            {
+                gameManager.attackState.doAction();
+                EndPhase();
+            }
         }
         else if(gameManager.currState.currState == States.AttackState){
             gameManager.currState = gameManager.currState.NextState();
-            gameManager.player.CommitAttack();
+            if(gameManager.allUIs[4].transform.childCount!=0)
+            {
+                gameManager.player.CommitAttack();
+            }
+            else
+            {
+                gameManager.player.rowAttack();
+            }
+            
             gameManager.player.EndTurn();
         }
     }

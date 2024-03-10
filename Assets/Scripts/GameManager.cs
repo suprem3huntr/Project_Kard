@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     public int cardCreated;
     public CardInstance selectedCard;
     public Dictionary<CardInstance,CardInstance> attackTargets = new Dictionary<CardInstance, CardInstance>();
+    public int rowAccum = 0;
     
 
     [SerializeField] private Button startButton;
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
     
     public void EndTurn()
     {
-
+        rowAccum = 0;
         if (turn)
         {
 
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartMatch()
     {
-        Debug.Log("Attempting Match Start");
+        
         if (GameObject.FindGameObjectsWithTag("Player").Length != 2)
         {
             Debug.Log("Not enough players");

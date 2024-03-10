@@ -8,7 +8,8 @@ using System.Linq;
 
 public class Player : NetworkBehaviour
 {
-    public NetworkVariable<int> mana = new NetworkVariable<int>(0);
+    public NetworkVariable<int> mana = new NetworkVariable<int>(0,NetworkVariableReadPermission.Everyone,NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> health = new NetworkVariable<int>(20,NetworkVariableReadPermission.Everyone,NetworkVariableWritePermission.Owner);
     public NetworkList<int> deck;
     public NetworkList<int> hand;
     public NetworkList<int> backrow;
@@ -81,8 +82,9 @@ public class Player : NetworkBehaviour
         if(starter == OwnerClientId)
         {
             gameManager.turn = true;
+            gameManager.attackState.doAction();
 
-            Debug.Log("Starter");
+           
 
             gameManager.currState = gameManager.drawState;
             gameManager.currState.ResetVariable(2);
@@ -175,6 +177,7 @@ public class Player : NetworkBehaviour
 
     public void DrawCard(bool isMana)
     {
+        
         if(isMana)
         {
             mana.Value++;
@@ -199,6 +202,11 @@ public class Player : NetworkBehaviour
             ;
             key.Attack(gameManager.attackTargets[key]);
         }
+        foreach(CardInstance val in gameManager.attackTargets.Values)
+        {
+            val.Damage(val.damageBuildup);
+            val.damageBuildup = 0;
+        }
         gameManager.attackTargets.Clear();
     
         attackServerRpc(indexes.ToArray(),targetRows.ToArray(),targetindexes.ToArray());
@@ -208,6 +216,17 @@ public class Player : NetworkBehaviour
     {
         if(!IsServer) return;
         NetworkManager.Singleton.SceneManager.LoadScene(s,LoadSceneMode.Single);
+    }
+
+    public void Damage(int dmg)
+    {
+        if(!IsOwner) return;
+        health.Value -= dmg;
+    }
+    public void rowAttack()
+    {
+        rowDamageServerRpc(gameManager.rowAccum);
+        
     }
 
     [ServerRpc]
@@ -347,7 +366,7 @@ public class Player : NetworkBehaviour
     [ServerRpc]
     private void attackServerRpc(int[] indexes,int[] targetRows,int[] targetindexes,ServerRpcParams serverRpcParams = default)
     {
-         ClientRpcParams clientRpcParams = new ClientRpcParams
+        ClientRpcParams clientRpcParams = new ClientRpcParams
         {
             Send = new ClientRpcSendParams
             {
@@ -364,13 +383,40 @@ public class Player : NetworkBehaviour
         Dictionary<CardInstance,CardInstance> attackdict = new Dictionary<CardInstance,CardInstance>();
         
         for(int i=0;i<indexes.Length;i++){
-            Debug.Log(targetindexes[i]);
+            
         
         
             CardInstance attacker = gameManager.allUIs[4].transform.GetChild(indexes[i]).GetComponent<CardInstance>();
             CardInstance target = gameManager.allUIs[targetRows[i]].transform.GetChild(targetindexes[i]).GetComponent<CardInstance>();
             attacker.Attack(target);
+            Debug.Log(i + " adds " + attacker.atk+" "+target.damageBuildup);
+            
         }
+        for(int i=0;i<indexes.Length;i++)
+        {
+            CardInstance target =  gameManager.allUIs[targetRows[i]].transform.GetChild(targetindexes[i]).GetComponent<CardInstance>();
+            target.Damage(target.damageBuildup);
+            target.damageBuildup = 0;
+        }
+    }
+    [ServerRpc]
+    private void rowDamageServerRpc(int dmg,ServerRpcParams serverRpcParams = default)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[]{1-serverRpcParams.Receive.SenderClientId}
+                
+            }
+        };
+        rowDamageClientRpc(dmg,clientRpcParams);
+    }
+
+    [ClientRpc]
+    private void rowDamageClientRpc(int dmg,ClientRpcParams clientRpcParams = default)
+    {
+        otherPlayer.Damage(dmg);
     }
     
     

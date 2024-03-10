@@ -26,6 +26,13 @@ public class Rows : MonoBehaviour,IPointerClickHandler
                 gameManager.currState.doAction();
             }
         }
+        else if(gameManager.currState.currState == States.AttackTargetState && rowNumber == 4 && gameObject.transform.childCount == 0)
+        {
+            gameManager.rowAccum += gameManager.selectedCard.atk;
+            gameManager.currState = gameManager.currState.NextState();
+
+            
+        }
     }
 
     

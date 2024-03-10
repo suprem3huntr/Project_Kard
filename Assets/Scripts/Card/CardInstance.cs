@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Linq;
+using System;
 
 public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler
 {
@@ -15,6 +16,7 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     public Sprite namePlate;
     public string cardName;
     public int cost;
+    public int damageBuildup;
     void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
@@ -30,7 +32,30 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     }
 
     public void Attack(CardInstance target){
-        Debug.Log("Card " + target.card.cardName + " is hit by " + card.cardName);
+        target.damageBuildup += atk;
+    }
+    public void Damage(int dmg)
+    {
+        Debug.Log("Damaging "+dmg);
+        if(dmg>def && row<3)
+        {
+            Debug.Log("Hitting through");
+            gameManager.player.Damage(dmg-def);
+            def = 0;
+        }
+        else
+        {
+            Debug.Log("Regular Hit");
+            def = Math.Max(0,def-dmg);
+        }
+        if(def == 0)
+        {
+            Kill();
+        }
+    }
+    public void Kill()
+    {
+        Destroy(gameObject);
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -44,11 +69,12 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
                 gameManager.selectedCard = this;
             }
         }
-        if(gameManager.currState.currState == States.AttackState && !gameManager.attackTargets.Keys.ToList().Contains(this) && row == 1){
+        else if(gameManager.currState.currState == States.AttackState && !gameManager.attackTargets.Keys.ToList().Contains(this) && row == 1){
             gameManager.currState = gameManager.attackTargetState;
+            gameManager.currState.SetNextState(gameManager.attackState);
             gameManager.selectedCard = this;
         }
-        if(gameManager.currState.currState == States.AttackTargetState && row>3){
+        else if(gameManager.currState.currState == States.AttackTargetState && row>3){
             gameManager.attackTargets[gameManager.selectedCard] = this;
             gameManager.currState = gameManager.currState.NextState();
         }

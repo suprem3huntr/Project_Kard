@@ -19,6 +19,7 @@ public class DisplayCard : MonoBehaviour
     
     public UnityEngine.UI.Image spriteImage;
     public UnityEngine.UI.Image namePlateImage;
+    public UnityEngine.UI.Image cardBack;
 
     private GameManager gameManager;
 
@@ -40,11 +41,28 @@ public class DisplayCard : MonoBehaviour
 
     void Update()
     {
-        nameText.text = instance.cardName;
-        atkText.text = ""+instance.atk;
-        defText.text = ""+instance.def;
-        spriteImage.sprite = instance.image;
-        namePlateImage.sprite = instance.namePlate;
+        
+            
+            nameText.text = instance.cardName;
+            atkText.text = ""+instance.atk;
+            defText.text = ""+instance.def;
+            spriteImage.sprite = instance.image;
+            namePlateImage.sprite = instance.namePlate;
+            if(instance.row==3)
+            {
+                cardBack.color = new Color(1,1,1,1);
+                namePlateImage.color = new Color(1,1,1,0);
+            }
+            else
+            {
+                cardBack.color = new Color(1,1,1,0);
+                namePlateImage.color = new Color(1,1,1,1);
+            }
+            
+        
+        
+        
+        
 
     }    
 
