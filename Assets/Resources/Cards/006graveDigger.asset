@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 006graveDigger
   m_EditorClassIdentifier: 
   id: -1
-  cardName: 
+  cardName: Grave Digger
   cost: 2
   atk: 2
   def: 2

@@ -25,6 +25,7 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
         name = card.name;
         image = card.cardImage;
         namePlate = card.cardNameplate;
+        cardName = card.cardName;
         cost = card.cost;
     }
 
