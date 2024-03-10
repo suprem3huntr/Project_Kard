@@ -11,6 +11,10 @@ public class UIManager : MonoBehaviour
     private Button endPhaseButton;
     [SerializeField]
     private TMP_Text currentState;
+    [SerializeField]
+    private TMP_Text playerHealth;
+    [SerializeField]
+    private TMP_Text enemyHealth;
     private GameManager gameManager;
     void Awake(){
         endPhaseButton.onClick.AddListener(EndPhase);
@@ -46,5 +50,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         currentState.text = gameManager.currState.currState.ToString();
+        playerHealth.text = gameManager.player.health.ToString();
+        enemyHealth.text = gameManager.player.otherPlayer.health.ToString();
     }
 }

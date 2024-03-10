@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestLobby.unity
     guid: 40afb9ef5e5208e419d880d9de5f3eca
+  - enabled: 1
+    path: Assets/Scenes/lobby.unity
+    guid: 61ddb6c558f6e504b97897674c83c297
   - enabled: 1
     path: Assets/Scenes/GautamPrototyping.unity
     guid: 2cda990e2423bbf4892e6590ba056729
