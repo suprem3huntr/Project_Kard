@@ -34,6 +34,10 @@ public class CardInstance : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     public void OnPointerClick(PointerEventData eventData)
     {
         if(gameManager.currState.currState == States.PlayState && row<3){
+            // if(row==0 && !gameManager.currState.isCondition()){
+            //     continue;
+            // }
+            // else 
             if(!gameManager.currState.isCondition()){
                 gameManager.currState.doAction();
                 gameManager.selectedCard = this;

@@ -15,13 +15,13 @@ MonoBehaviour:
   id: -1
   cardName: Maverick
   cost: 2
-  atk: 0
-  def: 0
+  atk: 3
+  def: 2
   characterDescription: Woooooo!!!!
-  description: Has the ability to directly attack a support card.
+  description: for 2 mana, can attack two random cards in the backline with 1 damage
   cardImage: {fileID: 21300000, guid: 2dd12290e53e8f14b842439bc2a01ead, type: 3}
   cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
-  Ability: 0
+  Ability: 1
   costTypes: 
   costCounts: 
   effectTypes: 
