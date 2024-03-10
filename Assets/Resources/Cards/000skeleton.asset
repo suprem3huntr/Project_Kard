@@ -15,8 +15,8 @@ MonoBehaviour:
   id: -1
   cardName: Larry
   cost: 1
-  atk: 0
-  def: 0
+  atk: 1
+  def: 1
   characterDescription: Just a skeleton.
   description: 
   cardImage: {fileID: 21300000, guid: 0359fdb7b42070343986010ddcc4130a, type: 3}

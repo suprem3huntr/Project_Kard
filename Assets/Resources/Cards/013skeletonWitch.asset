@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: -1
   cardName: Bethsheba
-  cost: 6
-  atk: 0
-  def: 0
+  cost: 5
+  atk: 1
+  def: 4
   characterDescription: DO NOT let her cook.
-  description: 
+  description: On a successful hit on player, take one mana card.
   cardImage: {fileID: 21300000, guid: bba7f2e34a2fc1541aa75ec84fbeed7c, type: 3}
   cardNameplate: {fileID: 21300000, guid: 981fe197b7c625948b7153a89825d876, type: 3}
-  Ability: 0
+  Ability: 1
   costTypes: 
   costCounts: 
   effectTypes: 

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: -1
   cardName: Jaws
-  cost: 4
-  atk: 0
-  def: 0
+  cost: 3
+  atk: 4
+  def: 2
   characterDescription: gulugulugulugulu
   description: 
   cardImage: {fileID: 21300000, guid: db1c7205142dfef40ab39c908c474111, type: 3}
