@@ -222,6 +222,12 @@ public class Player : NetworkBehaviour
     {
         if(!IsOwner) return;
         health.Value -= dmg;
+        if(health.Value <= 0)
+        {
+            gameManager.result = "You Lost";
+            WinServerRpc();
+            Invoke("StartGameOverServerRpc",3);
+        }
     }
     public void rowAttack()
     {
@@ -418,6 +424,36 @@ public class Player : NetworkBehaviour
     {
         otherPlayer.Damage(dmg);
     }
+    [ServerRpc]
+    private void WinServerRpc(ServerRpcParams serverRpcParams = default)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[]{1-serverRpcParams.Receive.SenderClientId}
+                
+            }
+        };
+        WinClientRpc(clientRpcParams);
+    }
+
+    [ClientRpc]
+    private void WinClientRpc(ClientRpcParams clientRpcParams = default)
+    {
+        otherPlayer.gameManager.result = "You Won";
+    }
     
+    [ServerRpc]
+    private void StartGameOverServerRpc()
+    {
+        StartGameOverClientRpc();
+    }
+
+    [ClientRpc]
+    private void StartGameOverClientRpc()
+    {
+        NetworkSceneLoad("lobby");
+    }
     
 }

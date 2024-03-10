@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     public CardInstance selectedCard;
     public Dictionary<CardInstance,CardInstance> attackTargets = new Dictionary<CardInstance, CardInstance>();
     public int rowAccum = 0;
-    
+    public string result = "";
 
     [SerializeField] private Button startButton;
 

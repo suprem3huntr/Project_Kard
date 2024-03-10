@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         currentState.text = gameManager.currState.currState.ToString();
-        playerHealth.text = gameManager.player.health.ToString();
-        enemyHealth.text = gameManager.player.otherPlayer.health.ToString();
+        playerHealth.text = gameManager.player.health.Value.ToString();
+        enemyHealth.text = gameManager.player.otherPlayer.health.Value.ToString();
     }
 }

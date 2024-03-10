@@ -1216,6 +1216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPhaseButton: {fileID: 1079666176}
   currentState: {fileID: 1890426614}
+  playerHealth: {fileID: 1978566174}
+  enemyHealth: {fileID: 2066274876}
 --- !u!1 &944121148
 GameObject:
   m_ObjectHideFlags: 0
